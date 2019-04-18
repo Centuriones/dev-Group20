@@ -16,7 +16,7 @@
     <body>
         <div> <h1>Register</h1></div>
        
-        <form action="welcome.jsp" target="_blank" method="POST">
+        <form action="welcome.jsp" method="POST">
             <table width="50%">
                 <tr>
                     <td>Email</td>

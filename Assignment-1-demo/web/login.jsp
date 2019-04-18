@@ -10,10 +10,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login Page</title>
     </head>
     <body>
         <h1>Hello World!</h1>
-        
+        <form action="index.jsp" method="POST">
+            <table width="50%">
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td> 
+                </tr>
+                <tr><td colspan="2" align="center"><input type="submit" value="Login"></td></tr>
+            </table>   
+        </form>
     </body>
 </html>

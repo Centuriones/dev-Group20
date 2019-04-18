@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Bare-minimum Bandits Movies</title>
     </head>
     <body>
-        <h1>Welcome to our movie shop!</h1>
+        <h1>Bare-minimum Bandits Movie Emporium!</h1>
         <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a>
     </body>
 </html>
