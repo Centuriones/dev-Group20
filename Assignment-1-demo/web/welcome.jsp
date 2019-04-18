@@ -31,7 +31,7 @@
             User user = new User(email, name, password, gender);
         %>
         <%
-            session.setAttribute("abc",user);
+            session.setAttribute("user",user);
         %>
         <h1>Welcome, <%=name%></h1>
         <p>Your email is <%=email%></p>
@@ -42,6 +42,6 @@
         <p>Sorry,you must agree to the Terms of Service.</p>
         <p>click<a href="register.jsp">here</a>to go back.</p>
         <%}%>
-        <p>Click <a href="main.jsp">here</a> to proceed to the main page.</p>   
+        <p>Click <strong><a href="main.jsp">here</a></strong> to proceed to the main page.</p>
     </body>
 </html>

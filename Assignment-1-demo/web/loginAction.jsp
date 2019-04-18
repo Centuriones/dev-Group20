@@ -18,7 +18,7 @@
             String password;
             String email;
         %>
-        <% 
+        <%
             email = request.getParameter("email");
             password = request.getParameter("password");
             Users users = new Users();

@@ -10,14 +10,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Main Page</title>
+        <title>Login Check</title>
     </head>
     <body>
         <%
             User user = (User)session.getAttribute("user");
         %>
-        <h1>You're logged in as: ${user.name}</h1>
-        <a href='logout.jsp'>Logout</a>
+        <h1>You're logged in as: <%=user.getName()%></h1>
+        <h4><a href='index.jsp'>Proceed to home.</a></h4>
+        <p>Is this not you? <a href='logout.jsp'>Logout</a></p>
        
     </body>
 </html>
