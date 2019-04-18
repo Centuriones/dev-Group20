@@ -14,29 +14,28 @@
     </head>
     
     <body>
-        <div> <h1>Register</h1></div>
-       
-        <form action="welcome.jsp" target="_blank" method="POST">
+        <div><h1>Register</h1></div>
+        <form action="welcome.jsp" method="POST">
             <table width="50%">
                 <tr>
                     <td>Email</td>
                     <td><input type="email" name="email"></td>
                 </tr>
-                
                 <tr>
                     <td>Full name</td>
                     <td><input type="text" name="name"></td>
                 </tr>
-                
                 <tr>
                     <td>Password</td>
                     <td><input type="password" name="password"></td> 
                 </tr>
-                
                 <tr>
                     <td rowspan="2">Gender</td>
                     <td><input type="radio" name="gender" value="Male">Male </td>
-                <tr><td><input type="radio" name="gender" value="Female">Female </td></tr>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="gender" value="Female">Female </td>
+                </tr>
                 <tr>
                     <td><label for="att">Agree to private policy</label></td>
                     <td><input type="checkbox" name="tos" id="att"></td>

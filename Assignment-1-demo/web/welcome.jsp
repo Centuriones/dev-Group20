@@ -11,15 +11,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>welcome page</title>
-    </head>
-    
-    <%
-        String name;
-        String password;
-        String email;
-        String gender;
-        String favmo;
-        
+    </head>   
+        <%
+            String name;
+            String password;
+            String email;
+            String gender;
         %>
         
         <%
@@ -27,28 +24,23 @@
             password=request.getParameter("password");
             email=request.getParameter("email");
             gender=request.getParameter("gender");
-            favmo=request.getParameter("favmo");
             String tos=request.getParameter("tos");
-            %>
+        %>
     <body>
         <%if(tos!=null){
-        User user = new User(email, name,
-        password, gender, favmo);%>
+            User user = new User(email, name, password, gender);%>
         <%
-        session.setAttribute("abc",user);
+            session.setAttribute("abc",user);
         %>
         <h1>Welcome, <%=name%></h1>
         <p>Your email is <%=email%></p>
         <p>Your password is <%= password%></p>
         
         <p>Your gender is <%= gender%></p>
-        <p>Your favourite type of movie is <%= favmo%></p>
-        <%}else{%>
+        <%} else {%>
         <p>Sorry,you must agree to the Terms of Service.</p>
         <p>click<a href="register.jsp">here</a>to go back.</p>
         <%}%>
-        <p>Click <a href="main.jsp">here</a> to proceed to the main page.</p>
-            
-            
+        <p>Click <a href="main.jsp">here</a> to proceed to the main page.</p>   
     </body>
 </html>

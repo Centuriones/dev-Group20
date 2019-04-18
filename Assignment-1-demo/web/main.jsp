@@ -13,8 +13,8 @@
         <title>Main Page</title>
     </head>
     <body>
-         <%
-        User user = (User)session.getAttribute("user");
+        <%
+            User user = (User)session.getAttribute("user");
         %>
         <h1>You're logged in as: ${user.name}</h1>
         <a href='logout.jsp'>Logout</a>

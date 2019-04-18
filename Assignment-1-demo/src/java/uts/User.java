@@ -19,17 +19,15 @@ public class User implements Serializable{
     private String name;
     private String password;
     private String gender;
-    private String favouriteMovie;
     public User(){
         super();
     }
-    public User(String email,String name,String password,String gender,String favouriteColour){
+    public User(String email,String name,String password,String gender){
         super();
         this.email = email;
         this.name = name;
         this.password = password;
         this.gender = gender;
-        this.favouriteMovie = favouriteMovie;
     }
     public String getEmail(){
         return email;
@@ -54,11 +52,5 @@ public class User implements Serializable{
     }
     public void  setGender(String gender){
         this.gender = gender;
-    }
-    public String getFavouriteMovie(){
-        return favouriteMovie;
-    }
-    public void  setFavouriteMovie(String favouriteMovie){
-        this.favouriteMovie = favouriteMovie;
     }
 }

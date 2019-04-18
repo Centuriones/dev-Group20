@@ -14,22 +14,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-       
          <% 
-String email = request.getParameter("email");
-String password = request.getParameter("password");
-Users users = new Users();
-User user = users.login("email","password");
-if(user != null){
-       session.setAttribute("user",user);
-       response.sendRedirect("main.jsp");
-       }
-else {
-session.setAttribute("error", "user does not exists");
-response.sendRedirect("login.jsp");
-}
-
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            Users users = new Users();
+            User user = users.login("email","password");
+            if(user != null){
+                   session.setAttribute("user",user);
+                   response.sendRedirect("main.jsp");
+                   }
+            else {
+            session.setAttribute("error", "user does not exists");
+            response.sendRedirect("login.jsp");
+            }
        %>
-
     </body>
 </html>
