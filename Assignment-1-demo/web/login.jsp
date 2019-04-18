@@ -21,6 +21,7 @@
             <p >Please enter your details below</p>
             <%
                 if(session.getAttribute("error") == "No user"){
+                    session.setAttribute("error", "");
             %>
             <p style="color:red;">Incorrect email or password.</p>
             <%} else {%>

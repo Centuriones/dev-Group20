@@ -9,11 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Logout Page</title>
     </head>
     <body>
-        <%session.invalidate();%>
-        <p>You have been logout successfully!</p>
-        <p><a href="index.jsp">Click here </a>to go to login page.</p>
+        <%
+            //session.invalidate();
+            session.setAttribute("user", null);
+        %>
+        <p>You have been logged out successfully!</p>
+        <p>Click <a href="index.jsp"><strong>here</strong></a> to go to login page.</p>
+        <p>Click <a href="index.jsp"><strong>here</strong></a> to proceed to the home page.</p>
     </body>
 </html>

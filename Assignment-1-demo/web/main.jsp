@@ -14,11 +14,20 @@
     </head>
     <body>
         <%
-            User user = (User)session.getAttribute("user");
+            User user;
+            if((session.getAttribute("user")) == null){
         %>
-        <h1>You're logged in as: <%=user.getName()%></h1>
-        <h4><a href='index.jsp'>Proceed to home.</a></h4>
-        <p>Is this not you? <a href='logout.jsp'>Logout</a></p>
-       
+            <h1>You are not currently logged in.</h1>
+            <h4><a href='index.jsp'>Proceed to home.</a></h4>
+            <p><a href='login.jsp'>Login</a></p>
+        <%
+            } else {
+                user = (User)session.getAttribute("user");
+        %>
+            <h1>You're logged in as: <%=user.getName()%></h1>
+            <h4><a href='index.jsp'>Proceed to home.</a></h4>
+            <p>Is this not you? <a href='logout.jsp'>Logout</a></p>
+        <%}%>
+
     </body>
 </html>

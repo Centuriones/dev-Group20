@@ -14,6 +14,6 @@
     <body>
         <h1>Welcome to our movie shop!</h1>
         
-        <a href="register.jsp">Register</a> | <a href ="login.jsp">Login</a>
+        <a href="register.jsp">Register</a> | <a href ="login.jsp">Login</a> | <a href ="main.jsp">Login Check</a>
     </body>
 </html>

@@ -5,9 +5,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Users implements Serializable {
-
-  
     private ArrayList<User> list = new ArrayList<User>();
+    
+    public Users() {
+    }
 
     public ArrayList<User> getList() {//get function for invoking
         return list;//return
@@ -16,7 +17,6 @@ public class Users implements Serializable {
     public void addUser(User user) {//add function for invoking
         list.add(user);////add input user to users
     }
-
    
     public User getUser(String email) {//get user by input email
         for (User user : list) {//for loop the check all user
@@ -35,5 +35,14 @@ public class Users implements Serializable {
             }
         }
         return null; // Login incorrect. Return null.
+    }
+    
+    public String getFirstUser() {
+        for (User user : list) {//for loop the check all user
+            if (!user.equals(null)) {
+                return user.getEmail() + user.getPassword();//return that user
+            }
+        }
+        return "nothin found";//if doesn't match any user, return null
     }
 }

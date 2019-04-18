@@ -17,10 +17,7 @@
             String password;
             String email;
             String gender;
-            Users users;
-        %>
-        
-        <%
+            
             name=request.getParameter("name");
             password=request.getParameter("password");
             email=request.getParameter("email");
@@ -28,17 +25,18 @@
             String tos=request.getParameter("tos");
         %>
     <body>
-        <%if(tos!=null){
-            User user = new User(email, name, password, gender);
-            if((session.getAttribute("users")) == null){
-                System.out.println("is null");
-                users = new Users();
-            } else {
-                users = (Users)session.getAttribute("users");
-            }
-            session.setAttribute("user",user);
-            users.addUser(user);
-            session.setAttribute("users",users);
+        <%
+            Users users;
+            if(tos!=null){
+                User user = new User(email, name, password, gender);
+                if((session.getAttribute("users")) == null){
+                    users = new Users();
+                } else {
+                    users = (Users)session.getAttribute("users");
+                }
+                session.setAttribute("user",user);
+                users.addUser(user);
+                session.setAttribute("users",users);
         %>
         <h1>Welcome, <%=name%></h1>
         <p>Your email is <%=email%></p>

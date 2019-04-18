@@ -17,13 +17,20 @@
         <%
             String password;
             String email;
+            User user;
+            Users users;
         %>
         <%
             email = request.getParameter("email");
             password = request.getParameter("password");
-            Users users = (Users)session.getAttribute("users");
-            System.out.println(users.getList());
-            User user = users.login("email","password");
+            if((session.getAttribute("users")) == null){
+                users = new Users();
+            } else {
+                users = (Users)session.getAttribute("users");
+            }
+            
+            user = users.login(email, password);
+            
             if(user != null){
                 session.setAttribute("user",user);
                 response.sendRedirect("main.jsp");
