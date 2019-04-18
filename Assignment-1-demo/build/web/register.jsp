@@ -55,7 +55,7 @@
                     <td><label for="att">Agree to private policy</label></td>
                     <td><input type="checkbox" name="tos" id="att"></td>
                 </tr>
-                
+               
                 <tr><td colspan="2" align="center"><input type="submit" value="Register"></td></tr>
                 
                 
