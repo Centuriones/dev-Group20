@@ -28,7 +28,8 @@
         %>
     <body>
         <%if(tos!=null){
-            User user = new User(email, name, password, gender);%>
+            User user = new User(email, name, password, gender);
+        %>
         <%
             session.setAttribute("abc",user);
         %>
