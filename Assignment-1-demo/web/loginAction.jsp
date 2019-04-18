@@ -4,6 +4,8 @@
     Author     : CZC
 --%>
 
+<%@page import="uts.User"%>
+<%@page import="uts.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,22 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <p>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
-        <p>Password incorrect. Click <a href="index.jsp">here</a> to try again.</p>>
+       
+         <% 
+String email = request.getParameter("email");
+String password = request.getParameter("password");
+Users users = new Users();
+User user = users.login("email","password");
+if(user != null){
+       session.setAttribute("user",user);
+       response.sendRedirect("main.jsp");
+       }
+else {
+session.setAttribute("error", "user does not exists");
+response.sendRedirect("login.jsp");
+}
+
+       %>
+
     </body>
 </html>

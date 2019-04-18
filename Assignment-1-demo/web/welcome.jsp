@@ -47,7 +47,7 @@
         <p>Sorry,you must agree to the Terms of Service.</p>
         <p>click<a href="register.jsp">here</a>to go back.</p>
         <%}%>
-        <p>Click <a href="index.jsp">here</a> to proceed to the main page.</p>
+        <p>Click <a href="main.jsp">here</a> to proceed to the main page.</p>
             
             
     </body>
