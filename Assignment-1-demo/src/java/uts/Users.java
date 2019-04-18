@@ -10,7 +10,7 @@ public class Users implements Serializable {
     private ArrayList<User> list = new ArrayList<User>();
 
     public ArrayList<User> getList() {//get function for invoking
-        return list;//return books
+        return list;//return
     }
 
     public void addUser(User user) {//add function for invoking

@@ -41,6 +41,7 @@
                     <td><input type="checkbox" name="tos" id="att"></td>
                 </tr>
                 <tr><td colspan="2" align="center"><input type="submit" value="Register"></td></tr>
+                <tr><td colspan="2" align="center"><input type="button" value="Cancel" onclick="history.back()"></td></tr>
             </table>   
         </form>
     </body>

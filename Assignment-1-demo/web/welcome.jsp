@@ -17,6 +17,7 @@
             String password;
             String email;
             String gender;
+            Users users;
         %>
         
         <%
@@ -29,9 +30,15 @@
     <body>
         <%if(tos!=null){
             User user = new User(email, name, password, gender);
-        %>
-        <%
+            if((session.getAttribute("users")) == null){
+                System.out.println("is null");
+                users = new Users();
+            } else {
+                users = (Users)session.getAttribute("users");
+            }
             session.setAttribute("user",user);
+            users.addUser(user);
+            session.setAttribute("users",users);
         %>
         <h1>Welcome, <%=name%></h1>
         <p>Your email is <%=email%></p>
@@ -39,9 +46,9 @@
         
         <p>Your gender is <%= gender%></p>
         <%} else {%>
-        <p>Sorry,you must agree to the Terms of Service.</p>
-        <p>click<a href="register.jsp">here</a>to go back.</p>
+        <p>Sorry, you must agree to the Terms of Service.</p>
+        <p>Click <a href="register.jsp"><strong>here</strong></a> to return to the register page.</p>
         <%}%>
-        <p>Click <strong><a href="main.jsp">here</a></strong> to proceed to the main page.</p>
+        <p>Click <a href="index.jsp"><strong>here</strong></a> to proceed to the home page.</p>
     </body>
 </html>

@@ -21,7 +21,8 @@
         <%
             email = request.getParameter("email");
             password = request.getParameter("password");
-            Users users = new Users();
+            Users users = (Users)session.getAttribute("users");
+            System.out.println(users.getList());
             User user = users.login("email","password");
             if(user != null){
                 session.setAttribute("user",user);
