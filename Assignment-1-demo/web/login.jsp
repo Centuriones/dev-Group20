@@ -1,9 +1,10 @@
 <%-- 
-    Document   : index
-    Created on : 2019-4-2, 12:29:14
-    Author     : CZC
+    Document   : login
+    Created on : 09/04/2019, 12:44:49 PM
+    Author     : Lachlan
 --%>
 
+<%@page import="uts.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Welcome to our movie shop!</h1>
-        <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a>
+        <h1>Hello World!</h1>
+        
     </body>
 </html>

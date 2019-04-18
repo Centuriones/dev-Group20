@@ -4,12 +4,13 @@
     Author     : CZC
 --%>
 
+<%@page import="uts.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Register Page</title>
     </head>
     
     <body>
@@ -36,33 +37,12 @@
                     <td rowspan="2">Gender</td>
                     <td><input type="radio" name="gender" value="Male">Male </td>
                 <tr><td><input type="radio" name="gender" value="Female">Female </td></tr>
-                </tr>
-                
-                <tr>
-                    <td>Favourite type of movie</td>
-                    <td>
-                        <select name="favmo">
-                            <option selected>SF</option>
-                            <option>Classic</option>
-                            <option>War</option>
-                            <option>Super hero</option>
-                            <option>History</option>
-                        </select>
-                    </td>
-                </tr>
-                
                 <tr>
                     <td><label for="att">Agree to private policy</label></td>
                     <td><input type="checkbox" name="tos" id="att"></td>
                 </tr>
-                
                 <tr><td colspan="2" align="center"><input type="submit" value="Register"></td></tr>
-                
-                
-            </table>
-            
-            
+            </table>   
         </form>
-        
     </body>
 </html>
