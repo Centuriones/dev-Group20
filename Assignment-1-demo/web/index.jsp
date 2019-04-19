@@ -9,10 +9,73 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bare-minimum Bandits Movies</title>
+        <title>Landing page</title>
+        <style>
+            body,html{
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .section-top{
+                width: 100%;
+                height: 100%;
+                padding-top: 220px;
+                overflow: hidden;
+                position: relative;
+                background-image: url(1.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                animation: slide 10s infinite;  
+            }
+            
+            .content{
+                position: absolute;
+                top: 50;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-transform: uppercase;
+                text-align: center;
+            }
+            
+            .content h1{
+                color: white;
+                font-size: 60px;
+                letter-spacing: 16px;
+            }
+            
+            .content a{
+                background: #0984e3;
+                padding: 10px 24px;
+                margin: 10px;
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                border-radius: 20px; 
+            }
+            
+            @keyframes slide{
+                0%{
+                    background-image: url(image/1.jpg);
+                }
+                40%{
+                    background-image: url(image/2.jpg);
+                }
+                60%{
+                    background-image: url(image/3.jpeg);
+                }
+            }
+        </style> 
     </head>
     <body>
-        <h1>Bare-minimum Bandits Movie Emporium!</h1>
-        <a href="register.jsp">Register</a> | <a href="login.jsp">Login | <a href ="main.jsp">Login Check</a>
+        <div class="section-top">
+            <div class="content">
+                <h1>Movie Store</h1>
+                <a href="register.jsp">Register</a> <a href ="login.jsp">Login</a>  <a href ="main.jsp">Login INFO</a>
+            </div>
+        </div>
     </body>
 </html>
+

@@ -69,6 +69,13 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div>
+                                Return to <a href="index.jsp" class="text-muted font-weight-light" data-toggle="">Home</a>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </form>
         </div>
