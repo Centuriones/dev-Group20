@@ -58,13 +58,13 @@
             
             @keyframes slide{
                 0%{
-                    background-image: url(image/1.jpg);
+                    background-image: url(Images/1.jpg);
                 }
                 40%{
-                    background-image: url(image/2.jpg);
+                    background-image: url(Images/2.jpg);
                 }
                 60%{
-                    background-image: url(image/3.jpeg);
+                    background-image: url(Images/3.jpeg);
                 }
             }
         </style> 
