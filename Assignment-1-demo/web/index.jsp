@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>Bare-minimum Bandits Movie Emporium!</h1>
-        <a href="register.jsp">Register</a> | <a href="login.jsp">Login</a>
+        <a href="register.jsp">Register</a> | <a href="login.jsp">Login | <a href ="main.jsp">Login Check</a>
     </body>
 </html>
