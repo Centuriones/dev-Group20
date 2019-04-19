@@ -10,7 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Landing page</title>
+        
         <style>
+            
             body,html{
                 margin: 0;
                 padding: 0;
@@ -25,10 +27,11 @@
                 padding-top: 220px;
                 overflow: hidden;
                 position: relative;
-                background-image: url(1.jpg);
+                background-image: url(Images/1.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
-                animation: slide 10s infinite;  
+                animation: slide 10s infinite;
+                
             }
             
             .content{
@@ -45,6 +48,7 @@
                 font-size: 60px;
                 letter-spacing: 16px;
             }
+           
             
             .content a{
                 background: #0984e3;
@@ -53,7 +57,17 @@
                 color: white;
                 text-decoration: none;
                 font-size: 18px;
-                border-radius: 20px; 
+                border-radius: 20px;
+                
+            }
+            
+              .content h3{
+                color:antiquewhite;
+               
+                font-family:trajan;
+                font-size: 25px;
+                letter-spacing: 8px;
+                margin-top: 60px;
             }
             
             @keyframes slide{
@@ -67,15 +81,19 @@
                     background-image: url(Images/3.jpeg);
                 }
             }
-        </style> 
+ 
+        </style>
     </head>
+   
     <body>
         <div class="section-top">
-            <div class="content">
-                <h1>Movie Store</h1>
-                <a href="register.jsp">Register</a> <a href ="login.jsp">Login</a>  <a href ="main.jsp">Login INFO</a>
-            </div>
+        <div class="content">
+            <h1>Movie Store</h1>
+            <a href="#" >Register</a> <a href="#" > Login </a> <a href="#" >Login INFO</a>
+            <h3>Bare-minimum Bandits Movie Emporium!</h3>
         </div>
+        </div>
+        
     </body>
 </html>
 
