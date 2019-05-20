@@ -1,4 +1,4 @@
-package uts;
+package uts.wsd;
 
 
 import java.io.Serializable;

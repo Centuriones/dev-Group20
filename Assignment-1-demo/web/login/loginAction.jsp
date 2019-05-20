@@ -4,8 +4,8 @@
     Author     : CZC
 --%>
 
-<%@page import="uts.User"%>
-<%@page import="uts.Users"%>
+<%@page import="uts.wsd.User"%>
+<%@page import="uts.wsd.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -4,7 +4,7 @@
     Author     : strongarm
 --%>
 
-<%@page import="uts.User"%>
+<%@page import="uts.wsd.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
