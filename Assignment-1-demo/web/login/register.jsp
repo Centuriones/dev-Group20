@@ -4,7 +4,7 @@
     Author     : CZC
 --%>
 
-<%@page import="uts.*"%>
+<%--<%@page import="uts.*"%> --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,36 +13,26 @@
         <title>Register Page</title>
     </head>
     
-    <body>
-        <div><h1>Register</h1></div>
-        <form action="welcome.jsp" method="POST">
-            <table width="50%">
-                <tr>
-                    <td>Email</td>
-                    <td><input type="email" name="email"></td>
+    <body onload="startTime()">
+        <div><span class="time" id="time" ></span></div>
+        <h1>Enter your details to register:</h1> 
+        <br>
+        <form action="welcome.jsp" method="post">
+            <table>
+                <tr><td>Name:</td><td><input size="23" type="text" name="name"></td></tr>
+                <tr><td>Email:</td><td><input size="23" type="text" name="email"></td></tr>
+                <tr><td>Password:</td><td><input size="23" type="password" name="password"></td></tr>
+                <tr><td>Date of Birth:</td><td><input type="date" name="dob"></td></tr>
+                <tr><td>Contact Number:</td><td><input type="text" name="number"></td></tr>
+                <tr><td>Time:</td><td><input type="startTime()"></td></tr>
+                <tr><td></td>
+                    <td>
+                        <input class="button" type="submit" value="Register"> 
+                        &nbsp; 
+                        <button class="button" type="button" onclick="location.href = 'index.jsp'" > Home Page </button>
+                    </td>
                 </tr>
-                <tr>
-                    <td>Full name</td>
-                    <td><input type="text" name="name"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"></td> 
-                </tr>
-                <tr>
-                    <td rowspan="2">Gender</td>
-                    <td><input type="radio" name="gender" value="Male">Male </td>
-                </tr>
-                <tr>
-                    <td><input type="radio" name="gender" value="Female">Female </td>
-                </tr>
-                <tr>
-                    <td><label for="att">Agree to private policy</label></td>
-                    <td><input type="checkbox" name="tos" id="att"></td>
-                </tr>
-                <tr><td colspan="2" align="center"><input type="submit" value="Register"></td></tr>
-                <tr><td colspan="2" align="center"><input type="button" value="Cancel" onclick="history.back()"></td></tr>
-            </table>   
+            </table>
         </form>
     </body>
 </html>
