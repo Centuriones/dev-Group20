@@ -4,7 +4,7 @@
     Author     : CZC
 --%>
 
-<%@page import="uts.*"%>
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,11 +30,8 @@
                     <td><input type="password" name="password"></td> 
                 </tr>
                 <tr>
-                    <td rowspan="2">Gender</td>
-                    <td><input type="radio" name="gender" value="Male">Male </td>
-                </tr>
-                <tr>
-                    <td><input type="radio" name="gender" value="Female">Female </td>
+                    <td>Phone Number</td>
+                    <td><input type="tel" name="phone"></td>
                 </tr>
                 <tr>
                     <td><label for="att">Agree to private policy</label></td>
