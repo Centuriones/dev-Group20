@@ -15,15 +15,19 @@
     
     <body>
         <div><h1>Register</h1></div>
-        <form action="welcome.jsp" method="POST">
+        <form action="registerAction.jsp" method="POST">
             <table width="50%">
                 <tr>
                     <td>Email</td>
                     <td><input type="email" name="email"></td>
                 </tr>
                 <tr>
-                    <td>Full name</td>
-                    <td><input type="text" name="name"></td>
+                    <td>First name</td>
+                    <td><input type="text" name="firstName"></td>
+                </tr>
+                <tr>
+                    <td>Last name</td>
+                    <td><input type="text" name="lastName"></td>
                 </tr>
                 <tr>
                     <td>Password</td>
@@ -31,7 +35,7 @@
                 </tr>
                 <tr>
                     <td>Phone Number</td>
-                    <td><input type="tel" name="phone"></td>
+                    <td><input type="text" name="phone"></td>
                 </tr>
                 <tr>
                     <td><label for="att">Agree to private policy</label></td>

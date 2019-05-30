@@ -15,21 +15,21 @@
     <body>
         <%
             UserDao userDao = (UserDao) session.getAttribute("userDao");
-            String userId = request.getParameter("username");
-            String password = request.getParameter("password");
             String email = request.getParameter("email");
             String firstName = request.getParameter("firstname");
             String lastName = request.getParameter("lastname");
+            String password = request.getParameter("password");
+            String phone = request.getParameter("phone");
             boolean staff = false;
             
-            boolean userCreated = userDao.createUser(userId, firstName, lastName, email, password, staff);
+            boolean userCreated = userDao.createUser(email, firstName, lastName, password, phone, staff);
             
             if (userCreated) {
                 session.setAttribute("successMessage", "Your User Account has been Created");
                 response.sendRedirect("login.jsp");
             } else {
                 session.setAttribute("errorMessage", "Invalid Details or Account Already Exists");
-                response.sendRedirect("createProfile.jsp");                               
+                response.sendRedirect("../index.jsp");                               
             }         
         %>
     </body>
