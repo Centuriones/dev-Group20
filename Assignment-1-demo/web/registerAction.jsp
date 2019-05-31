@@ -17,8 +17,8 @@
         <%
             UserDb userDb = (UserDb) session.getAttribute("userDb");
             String email = request.getParameter("email");
-            String firstName = request.getParameter("firstname");
-            String lastName = request.getParameter("lastname");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
             String password = request.getParameter("password");
             String phone = request.getParameter("phone");
             boolean staff = false;

@@ -25,43 +25,39 @@
         <title>Online Movie Store</title>
     </head>
     <body>     
-                <% if (user == null) { %>
-                
-                    You must be logged in to view this page. Please <a href="login.jsp">Sign In</a> to continue.
-                
-                <% } else { %>
+        <% if (user == null) { %>
+            You must be logged in to view this page. Please <a href="login.jsp">Sign In</a> to continue.
+        <% } else { %>
+            <h2>${user.getFirstName()} ${user.getLastName()}</h2>
+        <%--<h4>My Details <a href="${pageContext.request.contextPath}/editProfile.jsp">Edit Account</a></h4>--%>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <th>${user.firstName}</th>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <th>${user.lastName}</th>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <th>${user.email}</th>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <th>${user.phone}</th>
+            </tr>
+        </table>
 
-                    <h2>${user.getFirstName()} ${user.getLastName()}</h2>
-
-                <%--<h4>My Details <a href="${pageContext.request.contextPath}/editProfile.jsp">Edit Account</a></h4>--%>
-                <table>
-                    <tr>
-                        <td>First Name</td>
-                        <%--<th>${user.firstName}</th>--%>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <%--<th>${user.lastName}</th>--%>
-                    </tr>
-                    <tr>
-                        <td>Email Address</td>
-                        <%--<th>${user.email}</th>--%>
-                    </tr>
-                    <tr>
-                        <td>Phone Number</td>
-                        <%--<th>${user.phoneNumber}</th>--%>
-                    </tr>
-                </table>
-
-                <div>
-                    <h5>Delete Account</h5>
-                    <div>
-                        <h5>Are you Sure?</h5>
-                        <p>Once your account has been deleted, it cannot be recovered. Proceed with Caution!</p>
-                        <%--<a href="${pageContext.request.contextPath}/doDeleteProfile.jsp">Delete My Account</a>--%>
-                    </div>
-                </div>
-                <% } %>
+        <div>
+            <h5>Delete Account</h5>
+            <div>
+                <h5>Are you Sure?</h5>
+                <p>Once your account has been deleted, it cannot be recovered. Proceed with Caution!</p>
+                <%--<a href="${pageContext.request.contextPath}/doDeleteProfile.jsp">Delete My Account</a>--%>
+            </div>
+        </div>
+        <% } %>
     </body>
 </html>
 <%

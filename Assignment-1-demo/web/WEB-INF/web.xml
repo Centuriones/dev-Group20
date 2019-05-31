@@ -16,6 +16,6 @@
     </session-config>
     <error-page>
       <error-code>500</error-code>
-      <location>/logout.jsp</location>
+      <location>/errorHandler.jsp</location>
    </error-page>
 </web-app>
