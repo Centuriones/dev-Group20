@@ -13,10 +13,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <title>Logging in...</title>
     </head>
     <body>
         <%
+            session.setAttribute("user", null);
             Date date = new Date();
             Long time = date.getTime();
             Timestamp logintime = new Timestamp(time);
@@ -28,11 +29,12 @@
             User user = userDb.getUser(email, password);
             if (user != null) {
                 LoginsessionClass loginsession = new LoginsessionClass(loginid, logintime, email);
-                session.setAttribute("loginsession", loginsession);
+                session.setAttribute("loginsessionClass", loginsession);
                 session.setAttribute("user", user);
                 LoginsessionDb loginDb = (LoginsessionDb)session.getAttribute("loginDb");
                 loginDb.addLogintime(loginid, logintime, email);
-                response.sendRedirect("../index.jsp");                        
+                session.setAttribute("loggedInMessage", "You have succesfully logged in as " + email);
+                response.sendRedirect("index.jsp");                        
             } else {
                 session.setAttribute("error", "No user");
                 response.sendRedirect("login.jsp");                               

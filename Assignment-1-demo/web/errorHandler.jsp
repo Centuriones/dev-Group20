@@ -1,9 +1,8 @@
 <%-- 
-    Document   : logout
-    Created on : 2019-4-16, 14:55:40
-    Author     : CZC
+    Document   : errorHandler
+    Created on : 31/05/2019, 7:18:14 PM
+    Author     : LTChr
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,11 +12,9 @@
     </head>
     <body>
         <%
-            //session.invalidate();
             session.setAttribute("user", null);
         %>
-        <p>You have been logged out successfully!</p>
-        <p>Click <a href="index.jsp"><strong>here</strong></a> to go to login page.</p>
+        <p>An inescapable error has been encountered you have been safely logged out.</p>
         <p>Click <a href="index.jsp"><strong>here</strong></a> to proceed to the home page.</p>
     </body>
 </html>
