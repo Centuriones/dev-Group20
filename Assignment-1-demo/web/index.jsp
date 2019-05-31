@@ -6,6 +6,9 @@
 <%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="/ConnServlet" flush="true" />
+<%
+    String loggedInMessage = (String) session.getAttribute("loggedInMessage");
+%>
 <!DOCTYPE html>
 <html>
     <head>
