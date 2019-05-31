@@ -26,7 +26,7 @@
                     String submitted = request.getParameter("submit");
                     if (submitted == null) {
                 %>
-                <form action="addmovieaction.jsp" method="POST">
+                <form action="addMovieAction.jsp" method="POST">
                     <table>
                         <tr>
                             <td>Title</td>
@@ -80,11 +80,11 @@
                         </tr>
                     </table>
                 </form>
-                <br><a href="moviemanagement.jsp">Back to Movie Management</a>
+                <br><a href="movieView.jsp">Back to Movie View</a>
                 <% }
                 else {
                     MovieDb manager = (MovieDb)session.getAttribute("manager");
-                    System.out.print(request.getParameter("releaseDate"));
+                    //System.out.print(request.getParameter("releaseDate"));
                     String title = request.getParameter("title");
                     String genre = request.getParameter("genre");
                     String description = request.getParameter("description");
@@ -98,16 +98,13 @@
                         manager.addMovie(title, genre, description, rating, releaseDate, coverArt, price, quantity);
                         %>
                         <h4 class="mb-4"><%=title%> added successfully.</h3>
-                            <a href="addmovie.jsp">Add Another Movie</a><br>
+                            <a href="addMovie.jsp">Add Another Movie</a><br>
                             <a href="moviemanagement.jsp">Back to Movie Management</a>
-                        <%
-                    }
-                    else {                            %>
+                        <% } else { %>
                         <h4 class="mb-4"><%=title%> already exists, choose a different Movie title name.</h3>
                             <a href="addmovie.jsp">Try Again</a><br>
                             <a href="moviemanagement.jsp">Back to Movie Management</a>
-                        <%
-                    }      
+                        <% }      
                     }
                 %>
             </div>
