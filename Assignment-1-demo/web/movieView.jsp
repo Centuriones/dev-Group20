@@ -21,6 +21,7 @@
         <div>
         <br>
         <h2>Browse Movies</h2>
+        <p><a href="addMovie.jsp">Add Movie</a></p>
         <%
             MovieDb manager = (MovieDb)session.getAttribute("manager");
             Movie[] allMovies = manager.searchMovies(null, null);
