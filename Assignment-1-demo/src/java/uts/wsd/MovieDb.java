@@ -26,8 +26,7 @@ public class MovieDb {
         sqlQuery = String.format("SELECT * FROM MOVIES WHERE MOVIEID = %s", movieID);
         rset = stm.executeQuery(sqlQuery);
         rset.next();
-        return null;
-        //Needs to change movie constructor//return new Movie(rset.getInt("MovieID"), rset.getString("Title"), rset.getString("Genre"), rset.getString("Description"), rset.getDouble("Rating"), rset.getString("ReleaseDate"), rset.getString("CoverArt"), rset.getDouble("Price"), rset.getInt("Quantity"));
+        return new Movie(rset.getInt("MovieID"), rset.getString("Title"), rset.getString("Genre"), rset.getString("Description"), rset.getDouble("Rating"), rset.getString("ReleaseDate"), rset.getString("CoverArt"), rset.getDouble("Price"), rset.getInt("Quantity"));
     }
     
     public Movie[] searchMovies(String title, String genre) throws SQLException {
@@ -55,7 +54,7 @@ public class MovieDb {
         Movie[] movies = new Movie[rows];
         int currentRow = 0;
         while (rset.next()) {
-            //movies[currentRow] = new Movie(rset.getInt("MovieID"), rset.getString("Title"), rset.getString("Genre"), rset.getString("Description"), rset.getDouble("Rating"), rset.getString("ReleaseDate"), rset.getString("CoverArt"), rset.getDouble("Price"), rset.getInt("Quantity"));
+            movies[currentRow] = new Movie(rset.getInt("MovieID"), rset.getString("Title"), rset.getString("Genre"), rset.getString("Description"), rset.getDouble("Rating"), rset.getString("ReleaseDate"), rset.getString("CoverArt"), rset.getDouble("Price"), rset.getInt("Quantity"));
             currentRow ++;
         }
         return movies;
