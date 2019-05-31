@@ -3,8 +3,12 @@
     Created on : May 8, 2018, 12:03:36 PM
     Author     : Dalley
 --%>
-
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    User user = (User) session.getAttribute("user");
+    String successMessage = (String) session.getAttribute("successMessage");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,6 +28,8 @@
                     session.setAttribute("error", "");
             %>
             <p style="color:red;">Incorrect email or password.</p>
+            <%} else if(successMessage != null){%>
+            <p style="color:green;">${successMessage}</p>
             <%} else {%>
                 <br/><br/>
             <%}%>
@@ -72,7 +78,7 @@
                     <tr>
                         <td colspan="2" align="center">
                             <div>
-                                Return to <a href="index.jsp" class="text-muted font-weight-light" data-toggle="">Home</a>
+                                Return to <a href="../index.jsp" class="text-muted font-weight-light" data-toggle="">Home</a>
                             </div>
                         </td>
                     </tr>
@@ -81,4 +87,8 @@
         </div>
     </center>
 </body>
+<%
+    session.removeAttribute("errorMessage");
+    session.removeAttribute("successMessage");
+%>
 </html>

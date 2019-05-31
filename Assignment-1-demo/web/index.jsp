@@ -3,8 +3,9 @@
     Created on : 2019-4-2, 12:29:14
     Author     : CZC
 --%>
-
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="/ConnServlet" flush="true" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -89,7 +90,7 @@
         <div class="section-top">
         <div class="content">
             <h1>Movie Store</h1>
-            <a href="register.jsp" >Register</a> <a href="login.jsp" > Login </a> <a href="welcome.jsp" >Login INFO</a>
+            <a href="login/register.jsp" >Register</a> <a href="login/login.jsp" > Login </a> <a href="welcome.jsp" >Login INFO</a>
             <h3>Bare-minimum Bandits Movie Emporium!</h3>
             <p><a href="movieView.jsp">Movie List</a></p>
         </div>

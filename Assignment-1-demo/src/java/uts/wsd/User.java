@@ -16,18 +16,22 @@ import javax.xml.bind.annotation.*;
 
 public class User implements Serializable{
     private String email;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String password;
-    private String gender;
+    private String phone;
+    private boolean staff;
     public User(){
         super();
     }
-    public User(String email,String name,String password,String gender){
+    public User(String email,String firstName,String lastName,String password,String phone,boolean staff){
         super();
         this.email = email;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
-        this.gender = gender;
+        this.phone = phone;
+        this.staff = staff;
     }
     public String getEmail(){
         return email;
@@ -35,11 +39,17 @@ public class User implements Serializable{
     public void  setEmail(String email){
         this.email = email;
     }
-    public String getName(){
-        return name;
+    public String getFirstName(){
+        return firstName;
     }
-    public void  setName(String name){
-        this.name = name;
+    public void  setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    public String getLastName(){
+        return lastName;
+    }
+    public void  setName(String lastName){
+        this.lastName = lastName;
     }
     public String getPassword(){
         return password;
@@ -47,10 +57,22 @@ public class User implements Serializable{
     public void  setPassword(String password){
         this.password = password;
     }
-    public String getGender(){
-        return gender;
+    public String getPhone(){
+        return phone;
     }
-    public void  setGender(String gender){
-        this.gender = gender;
+    public void  setPhone(String phone){
+        this.phone = phone;
+    }
+    public boolean getStaff(){
+        return staff;
+    }
+    public void  setStaff(boolean staff){
+        this.staff = staff;
+    }
+    public boolean passwordMatches(String password) {
+        if(this.password.equals(password)) {
+            return true;
+        }
+        return false;
     }
 }

@@ -4,8 +4,10 @@
     Author     : CZC
 --%>
 
-<%@page import="uts.wsd.User"%>
-<%@page import="uts.wsd.Users"%>
+<%@page import="java.util.*"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.Date"%>
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,29 +17,26 @@
     </head>
     <body>
         <%
-            String password;
-            String email;
-            User user;
-            Users users;
-        %>
-        <%
-            email = request.getParameter("email");
-            password = request.getParameter("password");
-            if((session.getAttribute("users")) == null){
-                users = new Users();
-            } else {
-                users = (Users)session.getAttribute("users");
-            }
-            
-            user = users.login(email, password);
-            
-            if(user != null){
-                session.setAttribute("user",user);
-                response.sendRedirect("main.jsp");
+            Date date = new Date();
+            Long time = date.getTime();
+            Timestamp logintime = new Timestamp(time);
+            int key = (new Random()).nextInt(999999);
+            String loginid = "" + key;
+            UserDb userDb = (UserDb) session.getAttribute("userDb");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            User user = userDb.getUser(email, password);
+            if (user != null) {
+                LoginsessionClass loginsession = new LoginsessionClass(loginid, logintime, email);
+                session.setAttribute("loginsession", loginsession);
+                session.setAttribute("user", user);
+                LoginsessionDb loginDb = (LoginsessionDb)session.getAttribute("loginDb");
+                loginDb.addLogintime(loginid, logintime, email);
+                response.sendRedirect("../index.jsp");                        
             } else {
                 session.setAttribute("error", "No user");
-                response.sendRedirect("login.jsp");
-            }
+                response.sendRedirect("login.jsp");                               
+            }             
         %>
         <p>Redirecting...</p>
     </body>
