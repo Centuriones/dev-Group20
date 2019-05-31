@@ -16,8 +16,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Login Page</title>
     </head> 
-    <body >
-        
+    <body>      
     <center>
         <div>
             <% if (user == null) { %>
@@ -86,7 +85,7 @@
                 </table>
             </form>
             <% } else { %>
-                You must log out before you can login to another account. Please <a href="logoutAction.jsp">Logout</a> to continue.
+                You must log out before you can login to another account. Please <a href="logoutAction.jsp">Logout</a> to continue. Or return <a href="index.jsp">Home</a>.
             <% } %>
         </div>
     </center>

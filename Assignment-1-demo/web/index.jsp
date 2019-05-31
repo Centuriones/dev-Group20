@@ -99,7 +99,5 @@
             <p><a href="movieView.jsp">Movie List</a></p>
         </div>
         </div>
-        
     </body>
 </html>
-
