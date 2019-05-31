@@ -5,7 +5,6 @@
  */
 package uts.wsd;
 import java.sql.*;
-import uts.wsd.User;
 
 /**
  *

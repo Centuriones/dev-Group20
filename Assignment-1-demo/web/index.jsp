@@ -3,8 +3,9 @@
     Created on : 2019-4-2, 12:29:14
     Author     : CZC
 --%>
-
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="/ConnServlet" flush="true" />
 <!DOCTYPE html>
 <html>
     <head>

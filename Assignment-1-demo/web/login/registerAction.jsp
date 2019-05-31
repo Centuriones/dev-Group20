@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="uts.wsd.*"%>
+<%@page import="uts.wsd.UserDao.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
             } else {
                 session.setAttribute("errorMessage", "Invalid Details or Account Already Exists");
                 response.sendRedirect("../index.jsp");                               
-            }         
+            } 
         %>
     </body>
 </html>

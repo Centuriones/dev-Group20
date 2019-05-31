@@ -7,7 +7,6 @@
  */
 package uts.wsd;
 
-import uts.wsd.DBConnector;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import uts.wsd.*;
 
 public class ConnServlet extends HttpServlet {
 
@@ -42,7 +40,7 @@ public class ConnServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");        
         HttpSession session = request.getSession();
-        conn = db.openConnection();        
+        conn = db.openConnection();
         try {
             manager = new MovieDao(conn);
             userDao = new UserDao(conn);
@@ -54,7 +52,6 @@ public class ConnServlet extends HttpServlet {
         session.setAttribute("manager", manager);
         session.setAttribute("userDao", userDao);
         session.setAttribute("loginDao", loginDao);
-        
     }    
     
     @Override //Destroy the servlet and release the resources of the application
