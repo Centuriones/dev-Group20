@@ -7,7 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="/ConnServlet" flush="true" />
 <%
+    User user = (User) session.getAttribute("user");
     String loggedInMessage = (String) session.getAttribute("loggedInMessage");
+    System.out.println("");
 %>
 <!DOCTYPE html>
 <html>
@@ -92,8 +94,9 @@
     <body>
         <div class="section-top">
         <div class="content">
-            <h1>Movie Store</h1>
-            <a href="login/register.jsp" >Register</a> <a href="login/login.jsp" > Login </a> <a href="viewUserProfile.jsp" >Login INFO</a>
+            <h1>Movie Store </h1>
+            <p>Web Application Context Path = ${pageContext.request.contextPath}</p>
+            <a href="register.jsp" >Register</a> <a href="login.jsp" > Login </a> <a href="viewUserProfile.jsp" >Login INFO</a>
             <h3>Bare-minimum Bandits Movie Emporium!</h3>
             <p><a href="movieView.jsp">Movie List</a></p>
         </div>

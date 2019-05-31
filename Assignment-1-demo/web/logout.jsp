@@ -13,11 +13,10 @@
     </head>
     <body>
         <%
-            //session.invalidate();
             session.setAttribute("user", null);
         %>
         <p>You have been logged out successfully!</p>
-        <p>Click <a href="index.jsp"><strong>here</strong></a> to go to login page.</p>
+        <p>Click <a href="login.jsp"><strong>here</strong></a> to go to login page.</p>
         <p>Click <a href="index.jsp"><strong>here</strong></a> to proceed to the home page.</p>
     </body>
 </html>

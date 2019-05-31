@@ -20,6 +20,7 @@
         
     <center>
         <div>
+            <% if (user == null) { %>
             <h1>Login</h1>
             <h4>Welcome to our Movie Store</h4>
             <p >Please enter your details below</p>
@@ -78,12 +79,15 @@
                     <tr>
                         <td colspan="2" align="center">
                             <div>
-                                Return to <a href="../index.jsp" class="text-muted font-weight-light" data-toggle="">Home</a>
+                                Return to <a href="index.jsp" class="text-muted font-weight-light" data-toggle="">Home</a>
                             </div>
                         </td>
                     </tr>
                 </table>
             </form>
+            <% } else { %>
+                You must log out before you can login to another account. Please <a href="logoutAction.jsp">Logout</a> to continue.
+            <% } %>
         </div>
     </center>
 </body>

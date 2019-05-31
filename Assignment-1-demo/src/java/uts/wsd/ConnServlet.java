@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import java.io.PrintWriter;
+
 public class ConnServlet extends HttpServlet {
 
     private DBConnector db;
@@ -52,7 +54,7 @@ public class ConnServlet extends HttpServlet {
         session.setAttribute("manager", manager);
         session.setAttribute("userDb", userDb);
         session.setAttribute("loginDb", loginDb);
-    }    
+    }
     
     @Override //Destroy the servlet
      public void destroy() {

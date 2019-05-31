@@ -5,13 +5,17 @@
 --%>
 <%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="/ConnServlet" flush="true" />
+
 
 <%
-    User user = (User) session.getAttribute("user");
+    Boolean isnull = true;
+    //if(session.getAttribute("user") != null) {
+        User user = (User) session.getAttribute("user");
+    //    isnull = false;
+    //}
     String errorMessage = (String) session.getAttribute("errorMessage");
     String successMessage = (String) session.getAttribute("successMessage");
-    System.out.println(user);
+    //System.out.println(user);
 %>
 
 <!DOCTYPE html>
@@ -23,7 +27,7 @@
     <body>     
                 <% if (user == null) { %>
                 
-                    You must be logged in to view this page. Please <a href="login/login.jsp">Sign In</a> to continue.
+                    You must be logged in to view this page. Please <a href="login.jsp">Sign In</a> to continue.
                 
                 <% } else { %>
 
