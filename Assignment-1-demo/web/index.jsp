@@ -90,7 +90,7 @@
         <div class="section-top">
         <div class="content">
             <h1>Movie Store</h1>
-            <a href="login/register.jsp" >Register</a> <a href="login.jsp" > Login </a> <a href="welcome.jsp" >Login INFO</a>
+            <a href="login/register.jsp" >Register</a> <a href="login/login.jsp" > Login </a> <a href="welcome.jsp" >Login INFO</a>
             <h3>Bare-minimum Bandits Movie Emporium!</h3>
             <p><a href="movieView.jsp">Movie List</a></p>
         </div>

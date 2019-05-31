@@ -4,44 +4,42 @@
  * and open the template in the editor.
  */
 package uts.wsd;
-import java.sql.*;
 import java.util.Date;
+import java.sql.*;
 /**
  *
  * @author LTChr
  */
-public class LoginsessionDao {
-    private Statement st;
-    public LoginsessionDao(Connection conn) throws SQLException {
-        st = conn.createStatement();
+public class LoginsessionDb {
+    private Statement stm;
+    public LoginsessionDb(Connection conn) throws SQLException {
+        stm = conn.createStatement();
     }
     
     public void addLogintime(String loginid, Timestamp logintime, String email) throws SQLException {
-        String sqlcommand = "insert into log (loginid, login, userid) values('"+loginid+"','"+logintime+"', '"+email+"')";
-        st.executeUpdate(sqlcommand);
+        String sqlcommand = "insert into log (loginid, login, email) values('"+loginid+"','"+logintime+"', '"+email+"')";
+        stm.executeUpdate(sqlcommand);
     }
     
     public void addLogouttime(String loginid, Timestamp logouttime) throws SQLException {
         String sqlcommand = "update log set logout = '"+logouttime+"' where loginid = '"+loginid+"'";
-        st.executeUpdate(sqlcommand);
+        stm.executeUpdate(sqlcommand);
     }
     
     public ResultSet getLogintime(String email) throws SQLException {
         String sqlcommand = "select * from log where userid = '"+email+"' order by login";
-        ResultSet rs = st.executeQuery(sqlcommand);
-        return rs;
+        ResultSet rset = stm.executeQuery(sqlcommand);
+        return rset;
     }
     
     public void removeLogin(String loginid) throws SQLException {
         String sqlcommand = "delete from log where loginid = '"+loginid+"'";
-        st.executeUpdate(sqlcommand);
+        stm.executeUpdate(sqlcommand);
     }
     
     public ResultSet getLogintime(String email, Date date) throws SQLException {
         String sqlcommand = "select * from log where userid = '"+email+"' and DATE(login) = '"+date+"'";
-        ResultSet rs = st.executeQuery(sqlcommand);
-        return rs;
+        ResultSet rset = stm.executeQuery(sqlcommand);
+        return rset;
     }
-    
 }
-

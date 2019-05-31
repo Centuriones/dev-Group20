@@ -21,9 +21,9 @@ import javax.servlet.http.HttpSession;
 public class ConnServlet extends HttpServlet {
 
     private DBConnector db;
-    private MovieDao manager;
-    private UserDao userDao;
-    private LoginsessionDao loginDao;
+    private MovieDb manager;
+    private UserDb userDb;
+    private LoginsessionDb loginDb;
     private Connection conn;
     
     @Override //Create and instance of DBConnector for the deployment session
@@ -35,26 +35,26 @@ public class ConnServlet extends HttpServlet {
         }       
     }
   
-    @Override //Add the MovieDao instance to the session 
+    @Override //Add the MovieDb instance
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");        
         HttpSession session = request.getSession();
         conn = db.openConnection();
         try {
-            manager = new MovieDao(conn);
-            userDao = new UserDao(conn);
-            loginDao = new LoginsessionDao(conn);
+            manager = new MovieDb(conn);
+            userDb = new UserDb(conn);
+            loginDb = new LoginsessionDb(conn);
         } catch (SQLException ex) {
             Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }      
         //export the DB manager to the view-session (JSPs)
         session.setAttribute("manager", manager);
-        session.setAttribute("userDao", userDao);
-        session.setAttribute("loginDao", loginDao);
+        session.setAttribute("userDb", userDb);
+        session.setAttribute("loginDb", loginDb);
     }    
     
-    @Override //Destroy the servlet and release the resources of the application
+    @Override //Destroy the servlet
      public void destroy() {
         try {
             db.closeConnection();

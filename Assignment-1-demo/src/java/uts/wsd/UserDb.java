@@ -10,11 +10,11 @@ import java.sql.*;
  *
  * @author LTChr
  */
-public class UserDao {
+public class UserDb {
     
     private Statement st;
 
-    public UserDao(Connection conn) throws SQLException {
+    public UserDb(Connection conn) throws SQLException {
         st = conn.createStatement();
     }
     

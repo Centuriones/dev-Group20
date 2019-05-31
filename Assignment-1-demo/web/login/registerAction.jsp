@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="uts.wsd.*"%>
-<%@page import="uts.wsd.UserDao.*"%>
+<%@page import="uts.wsd.UserDb.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
     </head>
     <body>
         <%
-            UserDao userDao = (UserDao) session.getAttribute("userDao");
+            UserDb userDb = (UserDb) session.getAttribute("userDb");
             String email = request.getParameter("email");
             String firstName = request.getParameter("firstname");
             String lastName = request.getParameter("lastname");
@@ -23,14 +23,14 @@
             String phone = request.getParameter("phone");
             boolean staff = false;
             
-            boolean userCreated = userDao.createUser(email, firstName, lastName, password, phone, staff);
+            boolean userCreated = userDb.createUser(email, firstName, lastName, password, phone, staff);
             
             if (userCreated) {
                 session.setAttribute("successMessage", "Your User Account has been Created");
                 response.sendRedirect("login.jsp");
             } else {
-                session.setAttribute("errorMessage", "Invalid Details or Account Already Exists");
-                response.sendRedirect("../index.jsp");                               
+                session.setAttribute("errorMessage", "Invalid Details");
+                response.sendRedirect("register.jsp");                               
             } 
         %>
     </body>

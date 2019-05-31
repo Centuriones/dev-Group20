@@ -1,6 +1,5 @@
 package uts.wsd;
 
-import uts.wsd.Movie;
 import java.sql.*;
 
 /**
@@ -13,22 +12,22 @@ import java.sql.*;
  So far the application uses the Read and Create operations in the view.
  Secondly, improve the current view to enable the Update and Delete operations.
  */
-public class MovieDao {
+public class MovieDb {
 
-    private Statement st;
-    private ResultSet rs;
+    private Statement stm;
+    private ResultSet rset;
     private String sqlQuery;
 
-    public MovieDao(Connection conn) throws SQLException {
-        st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+    public MovieDb(Connection conn) throws SQLException {
+        stm = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
     }
 
     public Movie searchMovie(int movieID) throws SQLException {
         sqlQuery = String.format("SELECT * FROM MOVIES WHERE MOVIEID = %s", movieID);
-        rs = st.executeQuery(sqlQuery);
-        rs.next();
+        rset = stm.executeQuery(sqlQuery);
+        rset.next();
         return null;
-        //Needs to change movie constructor//return new Movie(rs.getInt("MovieID"), rs.getString("Title"), rs.getString("Genre"), rs.getString("Description"), rs.getDouble("Rating"), rs.getString("ReleaseDate"), rs.getString("CoverArt"), rs.getDouble("Price"), rs.getInt("Quantity"));
+        //Needs to change movie constructor//return new Movie(rset.getInt("MovieID"), rset.getString("Title"), rset.getString("Genre"), rset.getString("Description"), rset.getDouble("Rating"), rset.getString("ReleaseDate"), rset.getString("CoverArt"), rset.getDouble("Price"), rset.getInt("Quantity"));
     }
     
     public Movie[] searchMovies(String title, String genre) throws SQLException {
@@ -47,16 +46,16 @@ public class MovieDao {
                 }
             }
         sqlQuery += " ORDER BY TITLE";
-        rs = st.executeQuery(sqlQuery);
+        rset = stm.executeQuery(sqlQuery);
         
         int rows = 0;
-        while (rs.next()) rows++;
-        rs.beforeFirst();
+        while (rset.next()) rows++;
+        rset.beforeFirst();
         
         Movie[] movies = new Movie[rows];
         int currentRow = 0;
-        while (rs.next()) {
-            //movies[currentRow] = new Movie(rs.getInt("MovieID"), rs.getString("Title"), rs.getString("Genre"), rs.getString("Description"), rs.getDouble("Rating"), rs.getString("ReleaseDate"), rs.getString("CoverArt"), rs.getDouble("Price"), rs.getInt("Quantity"));
+        while (rset.next()) {
+            //movies[currentRow] = new Movie(rset.getInt("MovieID"), rset.getString("Title"), rset.getString("Genre"), rset.getString("Description"), rset.getDouble("Rating"), rset.getString("ReleaseDate"), rset.getString("CoverArt"), rset.getDouble("Price"), rset.getInt("Quantity"));
             currentRow ++;
         }
         return movies;
@@ -64,17 +63,17 @@ public class MovieDao {
 
     public boolean movieExists(String title) throws SQLException {
         sqlQuery = "SELECT MOVIEID FROM MOVIES WHERE TITLE ='" + title + "'";
-        rs = st.executeQuery(sqlQuery);
-        if (rs.next()) return true;
+        rset = stm.executeQuery(sqlQuery);
+        if (rset.next()) return true;
         else return false;
     }
     
     public int getNextMovieID() throws SQLException {
         int max = 0;
         sqlQuery = "SELECT MOVIEID FROM MOVIES";
-        rs = st.executeQuery(sqlQuery);
-        while (rs.next()) {
-            int currentMovieID = rs.getInt("MovieID");
+        rset = stm.executeQuery(sqlQuery);
+        while (rset.next()) {
+            int currentMovieID = rset.getInt("MovieID");
             if (currentMovieID > max) max = currentMovieID;
         }
         return max + 1;
@@ -83,16 +82,16 @@ public class MovieDao {
     public void addMovie(String title, String genre, String description, Double rating, String releaseDate, String coverArt, Double price, int quantity) throws SQLException {        
         int movieID = getNextMovieID();        
         sqlQuery = String.format("INSERT INTO MOVIES VALUES(%s,'%s','%s','%s',%s,'%s','%s',%s,%s)",movieID, title, genre, description, rating, releaseDate, coverArt, price, quantity);
-        st.executeUpdate(sqlQuery);
+        stm.executeUpdate(sqlQuery);
     }
 
     public void editMovie(int movieID, String title, String genre, String description, Double rating, String releaseDate, String coverArt, Double price, int quantity) throws SQLException {
         sqlQuery = String.format("UPDATE MOVIES SET TITLE='%s',GENRE='%s',DESCRIPTION='%s',RATING=%s,RELEASEDATE='%s',COVERART='%s',PRICE=%s,QUANTITY=%s WHERE MOVIEID=%s", title, genre, description, rating, releaseDate, coverArt, price, quantity, movieID);
-        st.executeUpdate(sqlQuery);
+        stm.executeUpdate(sqlQuery);
     }
     
     public void deleteMovie(int movieID) throws SQLException {
         sqlQuery = String.format("DELETE FROM MOVIES WHERE MOVIEID = %s", movieID);
-        st.executeUpdate(sqlQuery);
+        stm.executeUpdate(sqlQuery);
     }
 }
