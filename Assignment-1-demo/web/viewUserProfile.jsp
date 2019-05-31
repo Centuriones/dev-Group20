@@ -22,14 +22,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Online Movie Store</title>
+        <title>View User Profile</title>
     </head>
     <body>     
         <% if (user == null) { %>
             You must be logged in to view this page. Please <a href="login.jsp">Sign In</a> to continue.
         <% } else { %>
             <h2>${user.getFirstName()} ${user.getLastName()}</h2>
-        <%--<h4>My Details <a href="${pageContext.request.contextPath}/editProfile.jsp">Edit Account</a></h4>--%>
+        <h4>My Details</h4>
         <table>
             <tr>
                 <td>First Name</td>
@@ -47,14 +47,15 @@
                 <td>Phone Number</td>
                 <th>${user.phone}</th>
             </tr>
+            
         </table>
-
         <div>
-            <h5>Delete Account</h5>
+            <h5>Edit Account</h5>
             <div>
-                <h5>Are you Sure?</h5>
-                <p>Once your account has been deleted, it cannot be recovered. Proceed with Caution!</p>
-                <%--<a href="${pageContext.request.contextPath}/doDeleteProfile.jsp">Delete My Account</a>--%>
+                <a href="deleteUserProfileAction.jsp" >Delete Account </a>||<a href="profileEditor.jsp"> Update Account</a>
+            </div>
+            <div>
+                Return to <a href="index.jsp">Home</a>
             </div>
         </div>
         <% } %>
