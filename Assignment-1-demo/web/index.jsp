@@ -54,9 +54,8 @@
     <div class="w3-bar w3-top w3-black w3-card w3-border w3-mobile">
 
       <span class=" branding w3-bar-item w3-mobile">  <a href="#" class="w3-bar-item w3-button w3-green w3-mobile">OMS-Project</a></span>
-        <span class="w3-left w3-mobile">
-            meme
-          <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-green w3-mobile">${loggedInMessage}</a>
+        <span class="w3-bar-item  w3-text-white w3-mobile">  
+            <span class="w3-center">${loggedInMessage}</span>
         </span>
         <span class="w3-right w3-mobile">
           <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-green w3-mobile">Home</a>
